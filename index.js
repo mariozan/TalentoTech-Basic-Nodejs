@@ -3,6 +3,16 @@ const express = require('express') // Importando la libreria
 const app = express() // Inicializamos la variable de la libreria
 const port = 3000 // Definimos el puerto a usar
 
+const mongoose = require('mongoose'); // Importo la libreria mongoose
+mongoose.connect("") // Creo la cadena de conexion
+
+// Importamos las rutas del otro archivo
+app.use(express.urlencoded({extended: true})) // Acceder a la informacion de las urls
+app.use(express.json()) // Analizar informacion en formato JSON
+const UserRoutes = require('./routes/UserRoutes')
+app.use('/', UserRoutes)
+
+
 // Creando el servicio web
 // Funcionalidad de nuestra API
 // [get, post, put, patch, delete]
@@ -50,6 +60,7 @@ app.get('/mascota/:tipo', (req, res) => {
     }
     res.send(animal)
 })
+// API REST
 // Solicitud get
 app.get('/usuario', (req, res) => {
     res.send("Estoy consultando un usuario")
