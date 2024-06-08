@@ -4,7 +4,11 @@ const app = express() // Inicializamos la variable de la libreria
 const port = 3000 // Definimos el puerto a usar
 
 const mongoose = require('mongoose'); // Importo la libreria mongoose
-mongoose.connect("") // Creo la cadena de conexion
+
+// Obtengo la cadena de conexion del archivo .env
+require('dotenv').config()
+const DB_CONNECTION = process.env.DB_CONNECTION || ''
+mongoose.connect(DB_CONNECTION) // Creo la cadena de conexion
 
 // Importamos las rutas del otro archivo
 app.use(express.urlencoded({extended: true})) // Acceder a la informacion de las urls
