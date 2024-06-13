@@ -9,5 +9,6 @@ app.post('/usuario', controller.createUsuario) // Creo un usuario
 app.get('/usuario/:id', controller.getUsuarioById) // Consulto un usuario
 app.put('/usuario/:id', controller.updateUsuario) // Actualizo un usuario
 app.delete('/usuario/:id', controller.deleteUsuario) // Elimino un usuario
+app.post('/login', controller.login) // Login
 
 module.exports = app
