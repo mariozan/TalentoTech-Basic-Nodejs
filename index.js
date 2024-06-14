@@ -13,8 +13,12 @@ mongoose.connect(DB_CONNECTION) // Creo la cadena de conexion
 // Importamos las rutas del otro archivo
 app.use(express.urlencoded({extended: true})) // Acceder a la informacion de las urls
 app.use(express.json()) // Analizar informacion en formato JSON
+
 const UserRoutes = require('./routes/UserRoutes')
 app.use('/', UserRoutes)
+
+const CarroRoutes = require('./routes/CarroRoutes')
+app.use('/', CarroRoutes)
 
 
 // Creando el servicio web
