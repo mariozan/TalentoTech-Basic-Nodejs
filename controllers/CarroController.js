@@ -29,7 +29,7 @@ class CarroController {
         .then((result) => { // Cuando se ejecuta correctamente
             res.send({"status": "success", "message": "Carro Guardado correctamente"})
         }).catch((error) => { // Cuando hay un error
-            res.send({"status": "error", "message": error.message})
+            res.status(400).send({"status": "error", "message": error.message})
         })
     }
 
@@ -51,7 +51,7 @@ class CarroController {
         .then((result) => { // Cuando se ejecuta correctamente
             res.send({"status": "success", "message": "Carro Actualizado correctamente"})
         }).catch((error) => { // Cuando hay un error
-            res.send({"status": "error", "message": error.message})
+            res.status(400).send({"status": "error", "message": error.message})
         })
     }
 
